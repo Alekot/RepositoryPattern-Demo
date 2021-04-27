@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using MyShop.Domain.Models;
 using MyShop.Infrastructure;
+using MyShop.Infrastructure.Repositories;
 
 namespace MyShop.Web
 {
@@ -32,7 +33,10 @@ namespace MyShop.Web
             CreateInitialDatabase();
 
             services.AddTransient<ShoppingContext>();
-       
+            services.AddTransient<IRepository<Product>, ProductRepository>();
+            services.AddTransient<IRepository<Order>, OrderRepository>();
+            services.AddTransient<IRepository<Customer>, CustomerRepository>();
+
         }
 
         public void CreateInitialDatabase()

@@ -1,30 +1,35 @@
 ﻿using System;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
+using MyShop.Domain.Models;
 using MyShop.Infrastructure;
+using MyShop.Infrastructure.Repositories;
 
 namespace MyShop.Web.Controllers
 {
     public class CustomerController : Controller
     {
-        private ShoppingContext context;
+        private readonly IRepository<Customer> customerRepo;
 
-        public CustomerController()
+        //private ShoppingContext context;
+
+        public CustomerController(IRepository<Customer> customerRepo)
         {
-            context = new ShoppingContext();
+            this.customerRepo = customerRepo;
+            //context = new ShoppingContext();
         }
 
         public IActionResult Index(Guid? id)
         {
             if (id == null)
             {
-                var customers = context.Customers.ToList();
+                var customers = customerRepo.All(); //context.Customers.ToList();
 
                 return View(customers);
             }
             else
             {
-                var customer = context.Customers.Find(id.Value);
+                var customer = customerRepo.Get(id.Value); //customerRepo.Find(c => c.CustomerId == id); //context.Customers.Find(id.Value);
 
                 return View(new[] { customer });
             }
