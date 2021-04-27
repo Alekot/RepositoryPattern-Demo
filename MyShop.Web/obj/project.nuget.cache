@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "cgn5sUO5MSql7+pkri/1nVDBarbJFCqS2zYYYaJjS3e06QQ12xmxN5VlRg74cf1e4rJKYgNbeSlvw8M4axwphA==",
+  "dgSpecHash": "jas3aBkLSnMHcShhFL496g5WV8LUfQAMOuQFPgJeHcvUlmpvEoEH/JTcjVXASJRxJpF2IFfQGgqC9HSrqlDilg==",
   "success": true,
   "projectFilePath": "C:\\Users\\aleksandar.kocevski\\Documents\\VSProjects\\DesignPatterns-C#\\RepositoryPattern-Demo\\MyShop.Web\\MyShop.Web.csproj",
   "expectedPackageFiles": [
@@ -174,6 +174,7 @@
     "C:\\Users\\aleksandar.kocevski\\.nuget\\packages\\microsoft.netcore.platforms\\2.1.0\\microsoft.netcore.platforms.2.1.0.nupkg.sha512",
     "C:\\Users\\aleksandar.kocevski\\.nuget\\packages\\microsoft.netcore.targets\\2.1.0\\microsoft.netcore.targets.2.1.0.nupkg.sha512",
     "C:\\Users\\aleksandar.kocevski\\.nuget\\packages\\microsoft.win32.registry\\4.5.0\\microsoft.win32.registry.4.5.0.nupkg.sha512",
+    "C:\\Users\\aleksandar.kocevski\\.nuget\\packages\\mstest.testframework\\2.2.3\\mstest.testframework.2.2.3.nupkg.sha512",
     "C:\\Users\\aleksandar.kocevski\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
     "C:\\Users\\aleksandar.kocevski\\.nuget\\packages\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512",
     "C:\\Users\\aleksandar.kocevski\\.nuget\\packages\\newtonsoft.json.bson\\1.0.1\\newtonsoft.json.bson.1.0.1.nupkg.sha512",
@@ -222,6 +223,7 @@
     "C:\\Users\\aleksandar.kocevski\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.5.0\\system.diagnostics.diagnosticsource.4.5.0.nupkg.sha512",
     "C:\\Users\\aleksandar.kocevski\\.nuget\\packages\\system.diagnostics.fileversioninfo\\4.3.0\\system.diagnostics.fileversioninfo.4.3.0.nupkg.sha512",
     "C:\\Users\\aleksandar.kocevski\\.nuget\\packages\\system.diagnostics.stacktrace\\4.3.0\\system.diagnostics.stacktrace.4.3.0.nupkg.sha512",
+    "C:\\Users\\aleksandar.kocevski\\.nuget\\packages\\system.diagnostics.textwritertracelistener\\4.3.0\\system.diagnostics.textwritertracelistener.4.3.0.nupkg.sha512",
     "C:\\Users\\aleksandar.kocevski\\.nuget\\packages\\system.diagnostics.tools\\4.3.0\\system.diagnostics.tools.4.3.0.nupkg.sha512",
     "C:\\Users\\aleksandar.kocevski\\.nuget\\packages\\system.diagnostics.tracesource\\4.3.0\\system.diagnostics.tracesource.4.3.0.nupkg.sha512",
     "C:\\Users\\aleksandar.kocevski\\.nuget\\packages\\system.diagnostics.tracing\\4.3.0\\system.diagnostics.tracing.4.3.0.nupkg.sha512",
