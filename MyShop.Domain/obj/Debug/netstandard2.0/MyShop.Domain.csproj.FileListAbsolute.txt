@@ -7,12 +7,3 @@ C:\Users\aleksandar.kocevski\Documents\VSProjects\DesignPatterns-C#\c-sharp-desi
 C:\Users\aleksandar.kocevski\Documents\VSProjects\DesignPatterns-C#\c-sharp-design-patterns-data-access-patterns-master\src\02\Start_Here\MyShop.Domain\obj\Debug\netstandard2.0\MyShop.Domain.csproj.CoreCompileInputs.cache
 C:\Users\aleksandar.kocevski\Documents\VSProjects\DesignPatterns-C#\c-sharp-design-patterns-data-access-patterns-master\src\02\Start_Here\MyShop.Domain\obj\Debug\netstandard2.0\MyShop.Domain.dll
 C:\Users\aleksandar.kocevski\Documents\VSProjects\DesignPatterns-C#\c-sharp-design-patterns-data-access-patterns-master\src\02\Start_Here\MyShop.Domain\obj\Debug\netstandard2.0\MyShop.Domain.pdb
-C:\Users\aleksandar.kocevski\Documents\VSProjects\DesignPatterns-C#\RepositoryPattern-Demo\MyShop.Domain\bin\Debug\netstandard2.0\MyShop.Domain.deps.json
-C:\Users\aleksandar.kocevski\Documents\VSProjects\DesignPatterns-C#\RepositoryPattern-Demo\MyShop.Domain\bin\Debug\netstandard2.0\MyShop.Domain.dll
-C:\Users\aleksandar.kocevski\Documents\VSProjects\DesignPatterns-C#\RepositoryPattern-Demo\MyShop.Domain\bin\Debug\netstandard2.0\MyShop.Domain.pdb
-C:\Users\aleksandar.kocevski\Documents\VSProjects\DesignPatterns-C#\RepositoryPattern-Demo\MyShop.Domain\obj\Debug\netstandard2.0\MyShop.Domain.csprojAssemblyReference.cache
-C:\Users\aleksandar.kocevski\Documents\VSProjects\DesignPatterns-C#\RepositoryPattern-Demo\MyShop.Domain\obj\Debug\netstandard2.0\MyShop.Domain.AssemblyInfoInputs.cache
-C:\Users\aleksandar.kocevski\Documents\VSProjects\DesignPatterns-C#\RepositoryPattern-Demo\MyShop.Domain\obj\Debug\netstandard2.0\MyShop.Domain.AssemblyInfo.cs
-C:\Users\aleksandar.kocevski\Documents\VSProjects\DesignPatterns-C#\RepositoryPattern-Demo\MyShop.Domain\obj\Debug\netstandard2.0\MyShop.Domain.csproj.CoreCompileInputs.cache
-C:\Users\aleksandar.kocevski\Documents\VSProjects\DesignPatterns-C#\RepositoryPattern-Demo\MyShop.Domain\obj\Debug\netstandard2.0\MyShop.Domain.dll
-C:\Users\aleksandar.kocevski\Documents\VSProjects\DesignPatterns-C#\RepositoryPattern-Demo\MyShop.Domain\obj\Debug\netstandard2.0\MyShop.Domain.pdb

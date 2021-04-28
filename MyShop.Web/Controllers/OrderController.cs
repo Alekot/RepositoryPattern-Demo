@@ -12,18 +12,26 @@ namespace MyShop.Web.Controllers
 {
     public class OrderController : Controller
     {
-        private readonly IRepository<Product> productRepo;
-        private readonly IRepository<Order> orderRepo;
+        //private readonly IRepository<Product> productRepo;
+        //private readonly IRepository<Order> orderRepo;
+        //private readonly IRepository<Customer> customerRepo;
+        private readonly IUnitOfWork unitOfWork;
 
-        public OrderController(IRepository<Product> productRepo, IRepository<Order> orderRepo)
+        public OrderController(IUnitOfWork unitOfWork
+                                //,IRepository<Product> productRepo
+                                //,IRepository<Order> orderRepo
+                                //,IRepository<Customer> customerRepo
+            )
         {
-            this.productRepo = productRepo;
-            this.orderRepo = orderRepo;
+            this.unitOfWork = unitOfWork;
+            //this.productRepo = productRepo;
+            //this.orderRepo = orderRepo;
+            //this.customerRepo = customerRepo;
         }
 
         public IActionResult Index()
         {
-            var orders = orderRepo
+            var orders = unitOfWork.OrderRepo //orderRepo
                 .Find(order => order.OrderDate > DateTime.UtcNow.AddDays(-1));
 
             return View(orders);
@@ -31,7 +39,8 @@ namespace MyShop.Web.Controllers
 
         public IActionResult Create()
         {
-            var products = productRepo.All();
+            var products = unitOfWork.ProductRepo //productRepo
+                .All();
 
             return View(products);
         }
@@ -39,18 +48,39 @@ namespace MyShop.Web.Controllers
         [HttpPost]
         public IActionResult Create(CreateOrderModel model)
         {
+            #region Model Validation
             if (!model.LineItems.Any()) return BadRequest("Please submit line items");
 
             if (string.IsNullOrWhiteSpace(model.Customer.Name)) return BadRequest("Customer needs a name");
+            #endregion
 
-            var customer = new Customer
+            var customer = unitOfWork.CustomerRepo //customerRepo
+                .Find(c => c.Name == model.Customer.Name)
+                .FirstOrDefault();
+
+            if (customer != null)
             {
-                Name = model.Customer.Name,
-                ShippingAddress = model.Customer.ShippingAddress,
-                City = model.Customer.City,
-                PostalCode = model.Customer.PostalCode,
-                Country = model.Customer.Country
-            };
+                customer.Name = model.Customer.Name;
+                customer.ShippingAddress = model.Customer.ShippingAddress;
+                customer.City = model.Customer.City;
+                customer.Country = model.Customer.Country;
+                customer.PostalCode = model.Customer.PostalCode;
+
+                unitOfWork.CustomerRepo.Update(customer);
+                //customerRepo.Update(customer);
+                //customerRepo.SaveChanges();
+            }
+            else
+            {
+                customer = new Customer
+                {
+                    Name = model.Customer.Name,
+                    ShippingAddress = model.Customer.ShippingAddress,
+                    City = model.Customer.City,
+                    PostalCode = model.Customer.PostalCode,
+                    Country = model.Customer.Country
+                };
+            }
 
             var order = new Order
             {
@@ -61,9 +91,10 @@ namespace MyShop.Web.Controllers
                 Customer = customer
             };
 
-            orderRepo.Add(order);
-
-            orderRepo.SaveChanges();
+            //orderRepo.Add(order);
+            unitOfWork.OrderRepo.Add(order);
+            //orderRepo.SaveChanges();
+            unitOfWork.SaveChanges();
 
             return Ok("Order Created");
         }

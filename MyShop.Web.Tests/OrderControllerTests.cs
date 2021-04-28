@@ -1,6 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using MyShop.Domain.Models;
+using MyShop.Infrastructure;
 using MyShop.Infrastructure.Repositories;
 using MyShop.Web.Controllers;
 using MyShop.Web.Models;
@@ -16,10 +17,14 @@ namespace MyShop.Web.Tests
         {
             var orderRepository = new Mock<IRepository<Order>>();
             var productRepository = new Mock<IRepository<Product>>();
+            var customerRepository = new Mock<IRepository<Customer>>();
+            var unitOfWork = new Mock<IUnitOfWork>();
 
             var orderController = new OrderController(
-                productRepository.Object,
-                orderRepository.Object
+                unitOfWork.Object
+                //productRepository.Object,
+                //orderRepository.Object,
+                //customerRepository.Object
                 );
 
             var createOrderModel = new CreateOrderModel
@@ -40,7 +45,9 @@ namespace MyShop.Web.Tests
             };
 
             orderController.Create(createOrderModel);
-            orderRepository.Verify(repository => repository.Add(It.IsAny<Order>()),
+            //orderRepository.Verify(repository => repository.Add(It.IsAny<Order>()),
+            //    Times.AtMostOnce());
+            unitOfWork.Verify(repository => repository.OrderRepo.Add(It.IsAny<Order>()),
                 Times.AtMostOnce());
         }
     }

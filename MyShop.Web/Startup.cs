@@ -36,6 +36,7 @@ namespace MyShop.Web
             services.AddTransient<IRepository<Product>, ProductRepository>();
             services.AddTransient<IRepository<Order>, OrderRepository>();
             services.AddTransient<IRepository<Customer>, CustomerRepository>();
+            services.AddTransient<IUnitOfWork, UnitOfWork>();
 
         }
 
